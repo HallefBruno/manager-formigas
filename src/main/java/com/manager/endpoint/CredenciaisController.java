@@ -6,10 +6,8 @@ import com.manager.entity.Email;
 import com.manager.repository.ICodigoVerificacaoRepository;
 import com.manager.repository.IEmailRepository;
 import com.manager.service.EmailService;
+import com.manager.service.EscreverEmailService;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +33,9 @@ public class CredenciaisController {
     @Autowired
     private IEmailRepository emailRepository;
     
+    @Autowired
+    private EscreverEmailService escreverEmailService;
+    
     @RequestMapping
     public ModelAndView viewQuestion() {
         ModelAndView mv = new ModelAndView("Credenciais");
@@ -51,11 +52,10 @@ public class CredenciaisController {
                     return new ResponseEntity<>("http://formigas.herokuapp.com/formiga/",HttpStatus.FORBIDDEN);
                 }
             }
-            
             emailService.sendMailWithInlineResources(email.getEmail(), "Formigas online","Código de verificação é: ");
             emailService.save(email);
+            escreverEmailService.saveEmailInFile(email.getEmail());
         } catch(MailException e) {
-            System.out.println(e.getMessage());
             return new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
         }
         return ResponseEntity.ok("E-mail enviado com sucesso! ");

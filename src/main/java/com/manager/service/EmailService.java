@@ -17,7 +17,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import com.manager.repository.ICodigoVerificacaoRepository;
-import java.util.Objects;
 import java.util.Random;
 
 @Service("emailService")
@@ -34,7 +33,7 @@ public class EmailService {
 
     @Autowired
     private ICodigoVerificacaoRepository codigoVerificacaoRepository;
-    
+
     private Long codigoVe;
     
     //Este método enviará composição e enviará a mensagem
@@ -101,21 +100,21 @@ public class EmailService {
                 CodigoVerificacao cv = new CodigoVerificacao();
                 cv.setEmail(email);
                 cv.setNumeroGerado(codigoVe.toString());
-                codigoVerificacao = codigoVerificacaoRepository.saveAndFlush(cv);
+                codigoVerificacao = codigoVerificacaoRepository.save(cv);
                 if(codigoVerificacao == null) {
                     throw new MessageException("Não foi possível salvar codigo verificação");
                 }
             } else if(emailDigitado.getStatus() == false) {
-                email = emailRepository.saveAndFlush(emailDigitado);
+                email = emailRepository.save(emailDigitado);
                 CodigoVerificacao cv = new CodigoVerificacao();
                 cv.setEmail(email);
                 cv.setNumeroGerado(codigoVe.toString());
-                codigoVerificacao = codigoVerificacaoRepository.saveAndFlush(cv);
+                codigoVerificacao = codigoVerificacaoRepository.save(cv);
                 if(codigoVerificacao == null) {
                     throw new MessageException("Não foi possível salvar codigo verificação");
                 }
             } else {
-                email = emailRepository.saveAndFlush(emailDigitado);
+                email = emailRepository.save(emailDigitado);
             }
             return email;
         }
