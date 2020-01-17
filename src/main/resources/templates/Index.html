@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html >
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" th:href="@{/imagens/mascote-formiga.jpg}"/>
+        <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        <div style="margin-top: 50px" class="container">
+
+            <div class="jumbotron">
+                <h1 style="text-align: center; font-size: 40px">Tudo começa aqui!</h1><br>
+                <p>Devido levantamento de requesitos, será necessário que nos forneça algumas informções para que você tenha uma melhor expereiência com o sistema.
+                   Após validada as informações, iremos personalizar o sistema segundo a sua necessidade, e mais <code>a personalização será feita por você mesmo,</code> e tudo
+                   muito fácil e rápido, basta clicar no botão abaixo para o <label class="control-label label label-success" >start</label>
+                </p><br>
+                <p>
+                    <a class="btn btn-lg btn-primary" th:href="@{/credenciais}" role="button">Vamos nessa &raquo;</a>
+                </p>
+            </div>
+
+        </div>
+        <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    </body>
+</html>

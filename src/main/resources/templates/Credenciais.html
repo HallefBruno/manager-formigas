@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>credentials</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" th:href="@{/imagens/mascote-formiga.jpg}"/>
+        <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    </head>
+    <body>
+
+
+        <div class="container">
+            <div style="position: absolute;top: 30%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);" >
+                <div class="alert alert-danger alert-dismissible fade in " role="alert">
+
+                    <input type="hidden" name="context-app" th:value="@{/}" />
+
+                    <h4>Não se preocupe, isso não é um erro!</h4>
+                    <p>Após confirmar seu e-mail, verifique sua caixa de entrada!</p><br>
+                    
+                    <div class="row">
+                        <div class="campo-vazio">
+                            <div class="form-group col-sm-12">
+                                <div id="divInputButtonEnviarEmail" style="display: flex;">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cod-vazio">
+                            <div class="form-group col-sm-12">
+                                <div id="divInputButtonVerificaCod" style="display: flex;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+        <script th:src="@{/vendor-js/sweetalert2.all.min.js}" type="text/javascript"></script>
+        <script th:src="@{/manager/credenciais.js}" type="text/javascript"></script>
+    </body>
+</html>
+<!--position: absolute;top: 30%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);-->
