@@ -56,15 +56,12 @@ public class EmailService {
     public void sendMailWithInlineResources(String to, String subject, String body) {
         MimeMessagePreparator preparator = (MimeMessage mimeMessage) -> {
             mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            mimeMessage.setRecipient(Message.RecipientType.CC, new InternetAddress("sudtecnologia@gmail.com"));
             mimeMessage.setFrom(new InternetAddress("sudtecnologia@gmail.com"));
             mimeMessage.setSubject(subject);
-            
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-            
             StringBuilder html = new StringBuilder();
-            
             codigoVe = getRandomNumberUsingInts(0, 100000);
-            
             html.append("<html>");
             html.append("<body>");
             html.append("<img src='https://res.cloudinary.com/deurqqlk6/image/upload/c_scale,w_116/v1579011864/mascote/mascote-formiga.jpg'/>");
@@ -73,9 +70,7 @@ public class EmailService {
             html.append("</h2>");
             html.append("</body>");
             html.append("</html>");
-            //cloudinary.url().transformation(new Transformation().height(200).quality(100).width(180).crop("scale")).imageTag("mascote/mascote-formiga_rvitia.png");
             helper.setText(html.toString(), true);
-            //cloudinary.url().transformation(new Transformation().height(200).quality(100).width(180).crop("scale")).imageTag("mascote/mascote-formiga_rvitia.png");
         };
 
         try {
@@ -96,27 +91,23 @@ public class EmailService {
             CodigoVerificacao codigoVerificacao;
 
             if(emailCadastrado != null && emailCadastrado.isPresent()) {
-                email = emailCadastrado.get();
-                CodigoVerificacao cv = new CodigoVerificacao();
-                cv.setEmail(email);
-                cv.setNumeroGerado(codigoVe.toString());
-                codigoVerificacao = codigoVerificacaoRepository.save(cv);
-                if(codigoVerificacao == null) {
-                    throw new MessageException("Não foi possível salvar codigo verificação");
-                }
+                
+                return emailRepository.save(emailDigitado);
+                
             } else if(emailDigitado.getStatus() == false) {
+                
                 email = emailRepository.save(emailDigitado);
                 CodigoVerificacao cv = new CodigoVerificacao();
                 cv.setEmail(email);
                 cv.setNumeroGerado(codigoVe.toString());
                 codigoVerificacao = codigoVerificacaoRepository.save(cv);
+                
                 if(codigoVerificacao == null) {
                     throw new MessageException("Não foi possível salvar codigo verificação");
                 }
-            } else {
-                email = emailRepository.save(emailDigitado);
+                
+                return email;
             }
-            return email;
         }
         throw new MessageException("Não foi possível salvar o Email !");
     }

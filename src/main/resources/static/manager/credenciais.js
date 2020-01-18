@@ -52,6 +52,12 @@ function sendEmail() {
                 
                 403: function (data, textStatus, jqXHR) {
                     window.location.href=data.responseText;
+                    $(".container").prop("style","display:none;");
+                    $(".loader").fadeIn(1000, function(){
+                        window.setTimeout(function(){
+                            $('.loader').fadeOut();
+                        }, 5000);
+                    });
                     window.location.replace(data.responseText);
                 },
                 
@@ -101,7 +107,7 @@ function verificarCod() {
             url: context + "credenciais/validarcod/"+codEmail.cod+"/"+codEmail.emailDigitado,
             data: codEmail,
 
-            statusCode: {//brunohallef@gmail.com
+            statusCode: {
                 404: function (data, textStatus, jqXHR) {
                     Swal.fire("Atenção!",data.responseText,'warning');
                     qtdVezesCodErrado++;
@@ -114,6 +120,12 @@ function verificarCod() {
 
                 200: function (data, textStatus, jqXHR) {
                     window.location.href=data.responseText;
+                    $(".container").prop("style","display:none;");
+                    $(".loader").fadeIn(1000, function(){
+                        window.setTimeout(function(){
+                            $('.loader').fadeOut();
+                        }, 5000);
+                    });
                     window.location.replace(data.responseText);
                 }
             },

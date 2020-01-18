@@ -32,9 +32,7 @@ public class CredenciaisController {
     
     @Autowired
     private IEmailRepository emailRepository;
-    
-    @Autowired
-    private EscreverEmailService escreverEmailService;
+
     
     @RequestMapping
     public ModelAndView viewQuestion() {
@@ -54,7 +52,7 @@ public class CredenciaisController {
             }
             emailService.sendMailWithInlineResources(email.getEmail(), "Formigas online","Código de verificação é: ");
             emailService.save(email);
-            escreverEmailService.saveEmailInFile(email.getEmail());
+
         } catch(MailException e) {
             return new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
         }

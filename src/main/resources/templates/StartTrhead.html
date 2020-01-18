@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Timer Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .container{
+                top: 50%;
+                left: 50%;
+                width:30em;
+                height:18em;
+                margin-top: -9em;
+                margin-left: -15em;
+                border: 1px solid #ccc;
+                background-color: #f3f3f3;
+                position:fixed;
+            }
+
+            .centered-div{
+                margin: 0;
+                width:20em;
+                height:10em;
+                background: window;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+            .span-val {
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                font-weight: bold; 
+                font-size: 40px; 
+                padding-top: 100px
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container" >
+
+            <div class="centered-div" >
+                <span class="span-val" id="stopWatch">0</span>
+            </div>
+
+        </div>
+        <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+        <script th:src="@{/manager/thread-js.js}" type="text/javascript"></script>
+    </body>
+</html>
