@@ -47,7 +47,7 @@ public class CredenciaisController {
             
             if(emailVerificado.isPresent()) {
                 if(emailVerificado.get().getStatus() == true) {
-                    return new ResponseEntity<>("http://formigas.herokuapp.com/formiga/",HttpStatus.FORBIDDEN);
+                    return new ResponseEntity<>("/manager/question",HttpStatus.FORBIDDEN);
                 }
             }
             emailService.sendMailWithInlineResources(email.getEmail(), "Formigas online","Código de verificação é: ");
@@ -67,7 +67,7 @@ public class CredenciaisController {
                 Email email = cv.getEmail();
                 email.setStatus(Boolean.TRUE);
                 emailService.save(email);
-                return ResponseEntity.ok("http://formigas.herokuapp.com/formiga/");
+                return ResponseEntity.ok("/manager/question");
             }
         } else {
             return new ResponseEntity<>("Email digitado não é válido para o codigo! ",HttpStatus.NOT_FOUND);

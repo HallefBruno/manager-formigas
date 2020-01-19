@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Questinário</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" th:href="@{/imagens/mascote-formiga.jpg}"/>
+        <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{stylesheet/bootstrap-toggle.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/stylesheet/manager.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body style="background:#efefe9;">
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="board">
+                        <div class="board-inner">
+                            <ul class="nav nav-tabs" id="myTab">
+                                
+                                <div class="liner"></div>
+                                
+                                <li class="active">
+                                    <a href="#home" data-toggle="tab" title="Welcome">
+                                        <span class="round-tabs one">
+                                            <i class="glyphicon glyphicon-home"></i>
+                                        </span> 
+                                    </a>
+                                </li>
+
+                                <li style="pointer-events: none;" id="href-profile">
+                                    <a href="#profile" data-toggle="tab" title="Perfil">
+                                        <span class="round-tabs two">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span> 
+                                    </a>
+                                </li>
+
+                                <li style="pointer-events: none;" id="href-message">
+                                    <a href="#message" data-toggle="tab" title="Deixe sua mensagem">
+                                        <span class="round-tabs four">
+                                            <i class="glyphicon glyphicon-comment"></i>
+                                        </span> 
+                                    </a>
+                                </li>
+
+                                <li style="pointer-events: none;" id="href-doner">
+                                    <a href="#doner"  data-toggle="tab" title="Finalizado">
+                                        <span class="round-tabs five">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </span> 
+                                    </a>
+                                </li>
+                                
+                                <li style="pointer-events: none;" id="href-doacao">
+                                    <a href="#doacao"  data-toggle="tab" title="Doações">
+                                        <span class="round-tabs three">
+                                            <i class="glyphicon glyphicon-gift"></i>
+                                        </span> 
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="tab-content">
+                            
+                            <div class="tab-pane fade in active" id="home">
+
+                                <h3 class="head text-center">Vamos começar nossa personalização, escolha abaixo <span style="color:#f48260;">♥</span> </h3> <!--<sup>™</sup> <span style="color:#f48260;">♥</span>-->
+
+                                <p class="text-center" style="font-weight: bold; margin-top: 50px;">Condomínio horizontal</p>
+
+                                <div class="container-fluid">
+                                    <div class="row ">
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-heading text-center">Casa numerada</div>
+                                                <div class="panel-body">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b>Descrição: </b>Esse tipo de condominio, as casa não tem quadra e lote, apenas o numero que a identifica.</li>
+                                                        <li class="list-group-item"><input type="checkbox" id="checkcn" /></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-primary ">
+                                                <div class="panel-heading text-center">Casa com rua nomeada com quadra e lote</div>
+                                                <div class="panel-body">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b>Descrição: </b>Condomios de casas com extesão maior, no geral as casas são identificadas por quadra e lote.</li>
+                                                        <li class="list-group-item"><input type="checkbox" id="checkcqdlt"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-center" style="font-weight: bold;">Condomínio vertical</p>
+                                
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading text-center">Apenas um edifício ou bloco</div>
+                                                <div class="panel-body">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b>Descrição: </b>No geral os aptos são identificados por número.</li>
+                                                        <li class="list-group-item"><input type="checkbox" id="checkceb"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading text-center">Mais de um edifício ou bloco</div>
+                                                <div class="panel-body">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><b>Descrição: </b>Quando há mais de um edifício ou bloco, os apto, são identificados pela letra o bloco + Nº apto.</li>
+                                                        <li class="list-group-item"><input type="checkbox" id="checkmeb"/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="profile">
+                                <h3 class="head text-center">Create a Bootsnipp<sup>™</sup> Profile</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> create your profile <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="doacao">
+                                <h3 class="head text-center">Bootsnipp goodies</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="message">
+                                <h3 class="head text-center">Drop comments!</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+
+                                <p class="text-center">
+                                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
+                                </p>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="doner">
+                                <div class="text-center">
+                                    <i class="img-intro icon-checkmark-circle"></i>
+                                </div>
+                                <h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
+                                <p class="narrow text-center">
+                                    Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                                </p>
+                            </div>
+                            
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+        <script th:src="@{/vendor-js/bootstrap-toggle.min.js}" type="text/javascript"></script>
+        <script th:src="@{/vendor-js/sweetalert2.all.min.js}" type="text/javascript"></script>
+        <script th:src="@{/manager/question.js}" type="text/javascript"></script>
+        
+    </body>
+</html>
