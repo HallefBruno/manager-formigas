@@ -1,10 +1,59 @@
 
-$(document).ready(function () {
+var context;
+var qtdCasas;
+var numInicial;
+var selectNumeracao;
 
+$(document).ready(function () {
+    
+    context = $("input[name='context-app']").val();
+    qtdCasas = $("input[name='qtdcasas']");
+    numInicial = $("input[name='numinicial']");
+    selectNumeracao = $("select[name='numeracao']");
+    
     initCheck();
     evetCheck();
-
+    
+    clearSelectNumCasas();
+    numeracaoCondominioCasa();
+    
 });
+
+function numeracaoCondominioCasa() {
+    
+    qtdCasas = $("input[name='qtdcasas']");
+    numInicial = $("input[name='numinicial']");
+    selectNumeracao = $("select[name='numeracao']");
+
+    numInicial.on("keyup", function () {
+        var options;
+        selectNumeracao.html("");
+        selectNumeracao.html("<option value='' label='Sequência das casas'></option>");
+        for (var i = 0; i < Number(qtdCasas.val()); i++) {
+            var numeracaoCasas = Number(numInicial.val()) + i;
+            options += "<option value='" + numeracaoCasas + "' label='Casa " + numeracaoCasas + "'></option>";
+        }
+        selectNumeracao.append(options);
+    });
+}
+
+function clearSelectNumCasas() {
+
+    qtdCasas.on("keyup", function () {
+        selectNumeracao.html("");
+        selectNumeracao.html("<option value='' label='Sequência das casas'></option>");
+        numInicial.val("");
+        if(Number(qtdCasas.val()) > 0) {
+            var options;
+            for (var i = 0; i < Number(qtdCasas.val()); i++) {
+                var numeracaoCasas = Number(numInicial.val()) + i;
+                options += "<option value='" + numeracaoCasas + "' label='Casa " + numeracaoCasas + "'></option>";
+            }
+            selectNumeracao.append(options);
+        }
+    });
+    
+}
 
 function evetCheck() {
     

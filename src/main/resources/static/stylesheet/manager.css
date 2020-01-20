@@ -162,14 +162,14 @@ li.active span.round-tabs.five{
     padding-bottom: 10px;
 }
 .btn-outline-rounded{
-    padding: 10px 40px;
-    margin: 20px 0;
-    border: 2px solid transparent;
-    border-radius: 25px;
+    padding: 10px 30px;
+    margin: 15px 0;
+    border: 1px solid transparent;
+    border-radius: 20px;
 }
 
-.btn.green{
-    background-color:#5cb85c;
+.btn.green {
+    background-color:#563d7c;
     color: #ffffff;
 }
 
