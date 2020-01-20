@@ -204,3 +204,16 @@ li.active span.round-tabs.five{
         padding:12px 20px;
     }
 }
+
+.footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: #efefef;
+    text-align: center;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+}

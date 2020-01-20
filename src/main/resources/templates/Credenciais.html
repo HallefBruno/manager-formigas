@@ -39,43 +39,43 @@
 
         <div class="loader" style="display:none;"></div>
 
-
-        <div class="container">
-            
-            <div style="position: absolute;top: 30%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);" >
-                <div class="alert alert-danger alert-dismissible fade in " role="alert">
-
-                    <input type="hidden" name="context-app" th:value="@{/}" />
-
-                    <h4>Não se preocupe, isso não é um erro!</h4>
-                    <p>Após confirmar seu e-mail, verifique sua caixa de entrada!</p><br>
-                    
-                    <div class="row">
-                        <div class="campo-vazio">
-                            <div class="form-group col-sm-12">
-                                <div id="divInputButtonEnviarEmail" style="display: flex;">
-                                </div>
-                                
-                            </div>
-                        </div>
+        <section style="position: absolute;top: 30%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);" >
+            <div class="container-fluid">
+                <div class="jumbotron" >
+                    <div class="alert alert-info alert-dismissible fade in " role="alert">
+                        <input type="hidden" name="context-app" th:value="@{/}" />
+                        <span class="glyphicon glyphicon-exclamation-sign"></span><span><b> Após confirmar seu e-mail, verifique sua caixa de entrada!</b></span><br>
                     </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading text-center">Validação de E-mail</div>
+                        <div class="panel-body">
 
-                    <div class="row">
-                        <div class="cod-vazio">
-                            <div class="form-group col-sm-12">
-                                <div id="divInputButtonVerificaCod" style="display: flex;">
-
+                            <div class="row">
+                                <div class="campo-vazio">
+                                    <div class="form-group col-sm-12">
+                                        <div id="divInputButtonEnviarEmail" style="display: flex;">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="cod-vazio">
+                                    <div class="form-group col-sm-12">
+                                        <div id="divInputButtonVerificaCod" style="display: flex;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
         <script th:src="@{/vendor-js/sweetalert2.all.min.js}" type="text/javascript"></script>
         <script th:src="@{/manager/credenciais.js}" type="text/javascript"></script>
     </body>
 </html>
-<!--position: absolute;top: 30%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);-->

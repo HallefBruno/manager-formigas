@@ -52,7 +52,7 @@ function sendEmail() {
                 
                 403: function (data, textStatus, jqXHR) {
                     window.location.href=data.responseText;
-                    $(".container").prop("style","display:none;");
+                    $(".jumbotron").prop("style","display:none;");
                     $(".loader").fadeIn(1000, function(){
                         window.setTimeout(function(){
                             $('.loader').fadeOut();
@@ -120,7 +120,7 @@ function verificarCod() {
 
                 200: function (data, textStatus, jqXHR) {
                     window.location.href=data.responseText;
-                    $(".container").prop("style","display:none;");
+                    $(".jumbotron").prop("style","display:none;");
                     $(".loader").fadeIn(1000, function(){
                         window.setTimeout(function(){
                             $('.loader').fadeOut();
