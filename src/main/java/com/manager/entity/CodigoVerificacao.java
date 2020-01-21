@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +25,7 @@ public class CodigoVerificacao implements Serializable {
     private String numeroGerado;
     
     @JoinColumn(name = "id_email")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Email email;
 
     public Long getId() {

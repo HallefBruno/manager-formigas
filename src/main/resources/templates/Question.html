@@ -9,13 +9,6 @@
         <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href="@{stylesheet/bootstrap-toggle.min.css}" rel="stylesheet" type="text/css"/>
         <link th:href="@{/stylesheet/manager.css}" rel="stylesheet" type="text/css"/>
-<!--        <style>
-            .panel-primary>.panel-heading {
-                color: #f9f9f9;
-                background-color: #563d7c;
-                border-color: #563d7c;
-            }
-        </style>-->
     </head>
     <body style="background:#efefe9;">
 
@@ -145,84 +138,9 @@
                             
                             
                             <div class="tab-pane fade" id="profile">
-                                
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="form-group col-sm-12">
-                                            <div style="background-color: #f9f9f9" class="panel panel-info">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">
-                                                        <i class="glyphicon glyphicon-exclamation-sign"></i>
-                                                        <strong>Importante!</strong>
-                                                    </h3>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <ul>
-                                                        <li>Esse perfil podera ser editado depois.</li>
-                                                        <li>Não digita sua senha de e-mail, digite outra.</li>
-                                                        <li>Os campos: <strong>quantidade de casa, email e senha são obrigatórios.</strong></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div id="div-somente-casas">
+                                    
                                 </div>
-                                
-                                <div class="container-fluid">
-                                    <div class="row ">
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div style="background-color: #563d7c;" class="panel-heading text-center">Casa numerada</div>
-                                                <div class="panel-body">
-                                                    
-                                                    <div class="feed-quantidade">
-                                                        <div class="form-group col-sm-6">
-                                                            <label for="qtdcasas" class="control-label">Quantidade de casas</label>
-                                                            <input type="number" name="qtdcasas" id="qtdcasas" placeholder="Ex: 70" maxlength="3" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="form-group col-sm-6">
-                                                        <label for="numinicial" class="control-label">Inicia em que número</label>
-                                                        <input type="number" name="numinicial" id="numinicial" placeholder="Ex: 101" maxlength="3" class="form-control" />
-                                                    </div>
-
-                                                    <div class="form-group col-sm-12">
-                                                        <label for="numercao" class="control-label">Como ficou a numeração</label>
-                                                        <select name="numeracao" id="numercao" class="form-control" title="Sequência das casas"></select>
-                                                    </div>
-
-                                                    <div class="feed-email">
-                                                        <div class="form-group col-sm-4">
-                                                            <label for="email" class="control-label">Email</label>
-                                                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="feed-codigo-validacao">
-                                                        <div class="form-group col-sm-4">
-                                                            <label for="numercao" class="control-label">Código de verificação</label>
-                                                            <input type="number" name="codigo" id="codigo" placeholder="Código que enviamos por e-mail" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="feed-senha">
-                                                        <div class="form-group col-sm-4">
-                                                            <label for="senha" class="control-label">Senha</label>
-                                                            <input type="password" name="senha" id="senha" placeholder="Não coloque sua senha de email" class="form-control" maxlength="8" minlength="8"/>
-                                                        </div>
-                                                    </div>
-                                                        
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <p class="text-center">
-                                    <button type="button" class="btn btn-default btn-outline-rounded green btn-new-profile"> Criar perfil <span style="margin-left:10px;" class="glyphicon glyphicon-user"></span></button>
-                                </p>
-                                
                                 <div class="container-fluid" >
                                     <ul id="nextmessage" class="pager"></ul>
                                 </div>
@@ -288,11 +206,3 @@
         
     </body>
 </html>
-
-
-<!--<nav aria-label="...">
-    <ul class="pager">
-        <li class="previous"><a href="#home" data-toggle="tab"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-        <li class="next"><a href="#message" data-toggle="tab">Próximo <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
-</nav>-->

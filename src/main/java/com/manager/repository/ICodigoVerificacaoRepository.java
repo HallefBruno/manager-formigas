@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ICodigoVerificacaoRepository extends JpaRepository<CodigoVerificacao, Long>{
-    Optional<CodigoVerificacao> findByNumeroGerado(Long codigo);
+    Optional<CodigoVerificacao> findByNumeroGerado(Long id);
     CodigoVerificacao findTopByOrderByIdDesc();
+    Optional<CodigoVerificacao> findByNumeroGerado(String numeroGerado);
 }
